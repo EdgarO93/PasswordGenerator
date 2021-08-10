@@ -29,6 +29,10 @@ header {
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
+/* Centers the Generate a Password */
+h2{
+  text-align:center;
+}
 
 .card {
   background-color: hsl(0, 0%, 100%);
