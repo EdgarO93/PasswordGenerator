@@ -27,16 +27,19 @@ var password = "";
 
 
 //password generation code
-function generatePassword () {
+function generatePassword() {
   var finPassword = "";
   var choices = [];
 
   // start of the prompt for password, setting up min 8 and max 128 characters
   var passLength = prompt("How many characters do you want your password to be?");
-
-  //passLength == isNan was an attempt to make sure something is inputted and it's a number
-  if (passLength < 8 || passLength > 128) {
-    alert("It is recommended that your password be between 8 and 128 characters.\nTry again.");
+  // console.log(passLength) to check prompt length
+  // isNan fuction is to make sure it's a number
+  if (isNaN(passLength) === true) {
+    alert("Please enter a number. \nTry again, click Generate Password.")
+    //this covers min of 8 and max of 128 as well as something being inputed
+  } else if (passLength < 8 || passLength > 128) {
+    alert("It is recommended that your password be between 8 and 128 characters.\nTry again, click Generate Password.");
   }
 
   //have to confirm the password characters, array.protoype.push.apply will merge arrays
@@ -53,15 +56,22 @@ function generatePassword () {
     if (confirm("Should password have special characters?")) {
       Array.prototype.push.apply(choices, symbolArray)
     }
-    // the loop for randomly picking from the characters selected to fill the number of characters needed and then randomly picked
-    else {
-      for (var i = 0; i < passLength; i++) {
-        var random = Math.floor(Math.random()* choices.length);
-        finPassword += choices[random];
-      }
+    //this alert will show up if user chooses no criteria, where password would go I include messages before the undefined
+    else if (choices.length=== 0){
+      alert("Please choose one criteria,\n Try again, click Generate Password!")
+      finPassword= "Try \n again.\n Click \n Generate Password!!!\n!!!"
     }
+
+    // the loop for randomly picking from the characters selected to fill the number of characters needed and then randomly picked
+    for (var i = 0; i < passLength; i++) {
+      var random = Math.floor(Math.random() * choices.length);
+      finPassword += choices[random];
+      // console.log(finPassword) to check final passowrd
+    }
+
+    // console.log(choices) to check if prompt was populating choices
   }
-  //adding this made it not undefined....but it still does not add the password
+  //This will define var password in function writePassword
   return finPassword;
 
 }
@@ -74,7 +84,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
