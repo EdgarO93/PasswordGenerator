@@ -1,32 +1,16 @@
-//creating variables, then splitting into arrays
-
-var abcLower = "abcdefghijklmnopqrstuvwxyz";
-var num = "0123456789";
-// have to add forward slashes to include qoutes and double forward slash to include on
-var symbol = "!#$%&'()*\"\+,-./:;<=>?@[\\]^_`{|}~";
-
-//this will make the strings into arrays
-var abcArray = abcLower.split("");
-var numArray = num.split("");
-var symbolArray = symbol.split("");
-
-// make Array for upper ABCs
-var toCap = function (x) {
-  return x.toUpperCase();
-};
-
-//The array(uppercase) is created by applying the above function (to make it uppercase) to the previous array (abclower)
-var abcUpArray = abcArray.map(toCap);
+// Arrays of the characters that will be used by the password generator
+var abcUpArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var abcArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var symbolArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "'", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 //Window alert to give instruction to user
 window.onload = alert("Welcome! Please click Generate Password to begin.");
 
 // Creating a password variable with global scope 
-
 var password = "";
 
-
-//password generation code
+//password generator code
 function generatePassword() {
   var finPassword = "";
   var choices = [];
@@ -75,8 +59,6 @@ function generatePassword() {
   return finPassword;
 
 }
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -87,7 +69,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
