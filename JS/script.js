@@ -21,7 +21,7 @@ var abcUpArray = abcArray.map(toCap);
 //Window alert to give instruction to user
 window.onload = alert("Welcome! Please click Generate Password to begin.");
 
-// Creating a password variable to hold the choices (not really sure if this needs to be here)
+// Creating a password variable with global scope 
 
 var password = "";
 
@@ -42,7 +42,7 @@ function generatePassword() {
     alert("It is recommended that your password be between 8 and 128 characters.\nTry again, click Generate Password.");
   }
 
-  //have to confirm the password characters, array.protoype.push.apply will merge arrays
+  //have to confirm the password characters, array.protoype.push.apply will merge arrays with each criteria selected
   else {
     if (confirm("Should password have uppercase letters?")) {
       Array.prototype.push.apply(choices, abcUpArray)
@@ -56,10 +56,10 @@ function generatePassword() {
     if (confirm("Should password have special characters?")) {
       Array.prototype.push.apply(choices, symbolArray)
     }
-    //this alert will show up if user chooses no criteria, where password would go I include messages before the undefined
-    else if (choices.length=== 0){
+    //this alert will show up if user chooses no criteria, where password would go I included messages before the undefined statement
+    else if (choices.length === 0) {
       alert("Please choose one criteria,\n Try again, click Generate Password!")
-      finPassword= "Try \n again.\n Click \n Generate Password!!!\n!!!"
+      finPassword = "Try \n again.\n Click \n Generate Password!!!\n!!!"
     }
 
     // the loop for randomly picking from the characters selected to fill the number of characters needed and then randomly picked
