@@ -46,7 +46,7 @@ function generatePassword() {
       finPassword = "Try \n again.\n Click \n Generate Password!!!\n!!!"
     }
 
-    // the loop for randomly picking from the characters selected to fill the number of characters needed and then randomly picked
+    // the loop for randomly picking from the criteria selected to fill the finPassword variable until the password length achieved
     for (var i = 0; i < passLength; i++) {
       var random = Math.floor(Math.random() * choices.length);
       finPassword += choices[random];
