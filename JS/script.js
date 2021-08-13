@@ -16,7 +16,7 @@ function generatePassword() {
   var choices = [];
 
   // start of the prompt for password, setting up min 8 and max 128 characters
-  var passLength = prompt("How many characters do you want your password to be?");
+  var passLength = prompt("How many characters do you want your password to be?\n Please pick between 8 and 128.");
   // console.log(passLength) to check prompt length
   // isNan fuction is to make sure it's a number
   if (isNaN(passLength) === true) {
