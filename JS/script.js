@@ -43,7 +43,7 @@ function generatePassword() {
     //this alert will show up if user chooses no criteria, where password would go I included messages before the undefined statement
     else if (choices.length === 0) {
       alert("Please choose at least one criteria.\n Try again, click Generate Password!")
-      finPassword = "Try \n again.\n Click \n Generate Password!!!\n!!!"
+      finPassword = "Try \n again!\n Click \n Generate Password!!!\n!!!"
     }
 
     // the loop for randomly picking from the criteria selected to fill the finPassword variable until the password length achieved
