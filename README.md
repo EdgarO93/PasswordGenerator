@@ -9,6 +9,8 @@ This Password Generator was built using JavaScript. The generator works by rando
 ## Screenshot
 ![plot](Images/PasswordGeneratorScreenshot.png)
 
+## Lincese
+"This project is licensed under the terms of the MIT license."
 
 ## Acknowlegments
 ~~~
